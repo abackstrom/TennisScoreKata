@@ -78,6 +78,20 @@ class TennisGameTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($game->score(), array(40, 'Adv'));
     }
 
+    public function testPlayer1WinsAfterAdvantage() {
+        $game = new TennisGame();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player1Scores();
+
+        $this->assertEquals($game->score(), array('X', 40));
+    }
+
     public function testPlayer2WinsAfterAdvantage() {
         $game = new TennisGame();
         $game->player1Scores();
@@ -86,6 +100,40 @@ class TennisGameTest extends PHPUnit_Framework_TestCase
         $game->player2Scores();
         $game->player1Scores();
         $game->player2Scores();
+        $game->player2Scores();
+        $game->player2Scores();
+
+        $this->assertEquals($game->score(), array(40, 'X'));
+    }
+
+    public function testPlayer1WinsAfterAdvantages() {
+        $game = new TennisGame();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player1Scores();
+
+        $this->assertEquals($game->score(), array('X', 40));
+    }
+
+    public function testPlayer2WinsAfterAdvantages() {
+        $game = new TennisGame();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player2Scores();
+        $game->player1Scores();
+        $game->player2Scores();
+        $game->player1Scores();
         $game->player2Scores();
         $game->player2Scores();
 
